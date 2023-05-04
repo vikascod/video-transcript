@@ -1,0 +1,18 @@
+{% extends 'transcribe_base.html' %}
+
+{% block title %} Upload Video {% endblock title %}
+
+{% block content %}
+
+    <div class="container text-center mt-5">
+        <h1>Upload Video</h1>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="transcribe">
+              </form>
+        </div>
+    </div>
+
+{% endblock content %}
