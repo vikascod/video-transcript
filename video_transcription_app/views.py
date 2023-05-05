@@ -18,7 +18,7 @@ def transcribe_video(request):
             open("video.mp4", "wb").write(response.content)
             print("Downloaded")
             #Extract audio
-            command = 'ffmpeg -i video.mp4 -ab 160k -ar 44100 -vn audio.wav'
+            command = 'ffmpeg -y -i video.mp4 -ab 160k -ar 44100 -vn audio.wav'
             subprocess.call(command, shell=True)
 
             filename = "audio.wav"
