@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', 'anlnj!-96&@a7-no)08g36g*e=x)(^m9^@$tnrdam-!1+40+&=h2-&dpv=bk3t&4@_^8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["video-transcript.onrender.com", "localhost", "127.0.0.1"]
 
