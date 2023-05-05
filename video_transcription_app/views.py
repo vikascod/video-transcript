@@ -5,8 +5,6 @@ import os
 import requests
 import speech_recognition as sr
 import subprocess
-import youtube_dl
-import urllib
 
 def transcribe_video(request):
     form = VideoUploadForm()
@@ -16,11 +14,11 @@ def transcribe_video(request):
             video_url = form.cleaned_data['video_url']
 
             # download the video and save it to the working directory
-
-            urllib.request.urlretrieve(video_url, 'new_vid.mp4')
+            response = requests.get(video_url)
+            open("video.mp4", "wb").write(response.content)
             print("Downloaded")
             #Extract audio
-            command = 'ffmpeg -i python.mp4 -ab 160k -ar 44100 -vn audio.wav'
+            command = 'ffmpeg -i video.mp4 -ab 160k -ar 44100 -vn audio.wav'
             subprocess.call(command, shell=True)
 
             filename = "audio.wav"
