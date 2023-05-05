@@ -1,3 +1,4 @@
+.env
 pycache
 db.sqlite3
 backup.py
