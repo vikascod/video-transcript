@@ -8,3 +8,6 @@ sqlparse==0.4.3
 gunicorn==20.1.0
 django-decouple==2.1
 SpeechRecognition
+psycopg2-binary==2.9.5
+dj-database-url==1.3.0
+tzdata
